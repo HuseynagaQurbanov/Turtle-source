@@ -8,6 +8,8 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 direction;
     private float lane;
     public float forwardSpeed;
+    public float jumpForce;
+    public float gravity = -20;
 
     void Start()
     {
@@ -18,6 +20,8 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         direction.x = forwardSpeed;
+
+        direction.y += gravity * Time.deltaTime; 
 
         Movement();
         CheckInputs();
@@ -38,16 +42,35 @@ public class PlayerMovement : MonoBehaviour
     }
     void CheckInputs()
     {
-        if (Input.GetKeyDown(KeyCode.D))
+        if (controller.isGrounded)
+        {
+            if (SwipeManager.swipeUp)
+            {
+                gravity = -20;
+                Jump();
+            }
+        }
+
+        if (SwipeManager.swipeRight)
         {
             if (lane > -1)
                 lane -= 2.7f;
         }
 
-        if (Input.GetKeyDown(KeyCode.A))
+        if (SwipeManager.swipeLeft)
         {
             if (lane < 1)
                 lane += 2.7f;
         }
+
+        if (SwipeManager.swipeDown)
+        {
+            gravity = -170;
+        }
+    }
+
+    void Jump()
+    {
+        direction.y = jumpForce;
     }
 }
