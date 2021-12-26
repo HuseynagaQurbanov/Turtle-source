@@ -1,21 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+//using System.Collections;
+//using System.Collections.Generic;
+//using UnityEngine;
 
-public class CameraFollow : MonoBehaviour
-{
-    private Transform player;
-    private float xOffset = -4.33f;
-    private float yOffset = 4f;
+//public class CameraFollow : MonoBehaviour
+//{
+//    public Transform target;
+//    private Vector3 offset;
 
 
-    void Start()
-    {
-        player = GameObject.Find("Player").transform;
-    }
+//    void Start()
+//    {
+//        offset = transform.position - target.position;
+//    }
 
-    void Update()
-    {
-        transform.position = new Vector3(player.position.x + xOffset, player.position.y + yOffset, player.position.z);
-    }
-}
+//    void Update()
+//    {
+//        Vector3 newPosition = new Vector3(offset.x + target.position.x, offset.y + target.position.y,offset.z + target.position.z);
+//        transform.position = newPosition;
+//    }
+//}

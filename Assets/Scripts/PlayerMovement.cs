@@ -7,24 +7,31 @@ public class PlayerMovement : MonoBehaviour
     private CharacterController controller;
     private Vector3 direction;
     private float lane;
+    private Vector3 offset;
+    public Camera cameraFollow;
     public float forwardSpeed;
     public float jumpForce;
     public float gravity = -20;
 
     void Start()
     {
+        offset = cameraFollow.transform.position - transform.position;
         controller = GetComponent<CharacterController>();
         lane = 0;
     }
 
     void Update()
     {
+        #region Speed and gravity
         direction.x = forwardSpeed;
+        direction.y += gravity * Time.deltaTime;
+        #endregion
 
-        direction.y += gravity * Time.deltaTime; 
-
+        #region Custom Methods
         Movement();
         CheckInputs();
+        CameraFollow();
+        #endregion
     }
 
     void FixedUpdate()
@@ -66,11 +73,26 @@ public class PlayerMovement : MonoBehaviour
         if (SwipeManager.swipeDown)
         {
             gravity = -170;
+            if (controller.isGrounded && transform.rotation.x == 0)
+            {
+                transform.Rotate(-90, 0, 0);
+                Invoke("ChangeRotation", 1f);
+            }
         }
     }
 
     void Jump()
     {
         direction.y = jumpForce;
+    }
+
+    void ChangeRotation()
+    {
+        transform.Rotate(90, 0, 0);
+    }
+
+    void CameraFollow()
+    {
+        cameraFollow.transform.position = new Vector3(offset.x + transform.position.x, offset.y + transform.position.y, transform.position.z);
     }
 }

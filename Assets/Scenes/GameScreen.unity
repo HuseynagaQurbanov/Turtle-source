@@ -314,7 +314,7 @@ Camera:
   field of view: 80
   orthographic: 0
   orthographic size: 5
-  m_Depth: -1
+  m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -355,6 +355,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd7ab8d8f720ccd45b2e42997cf3c72c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 6758088223695140648}
+  offset: {x: 0, y: 0, z: 0}
 --- !u!1 &1317841374
 GameObject:
   m_ObjectHideFlags: 0
@@ -490,6 +492,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49ac5dae60037514d89e2dbcfdd7ff99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraFollow: {fileID: 963194227}
   forwardSpeed: 15
   jumpForce: 10
   gravity: -20
