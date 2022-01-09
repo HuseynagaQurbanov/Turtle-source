@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 13135c12c490c9045b7443e911fa1060, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.76522994, g: 0.76734054, b: 0.7486174, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -151,7 +151,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 0.6509434, g: 0.648472, b: 0.6417319, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -191,7 +191,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -355,8 +355,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd7ab8d8f720ccd45b2e42997cf3c72c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 6758088223695140648}
-  offset: {x: 0, y: 0, z: 0}
 --- !u!1 &1317841374
 GameObject:
   m_ObjectHideFlags: 0
@@ -387,11 +385,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilePrefabs:
-  - {fileID: 2419110667207795755, guid: ce7c719956c6bb340bb0ff7a085ffd51, type: 3}
+  - {fileID: 711144435579954737, guid: 5e826fca81718cf478fe5be207ae70ff, type: 3}
   - {fileID: 2419110667207795755, guid: fb45b787990e8284f9fe49f7be398fc4, type: 3}
   - {fileID: 2419110667207795755, guid: b0a6e26d395c9dc41a13d9f16b0a58ab, type: 3}
-  - {fileID: 2419110667207795755, guid: 1672951fdf27b984b983c7bf6fded567, type: 3}
-  - {fileID: 2419110667207795755, guid: 2acd6983ec901a5468611745db1acd8a, type: 3}
   zSpawn: 0
   tileLength: 69
   numberOfTiles: 5
@@ -442,10 +438,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 51.375275
+  m_Radius: 30.86106
   m_Height: 182.2249
   m_Direction: 1
-  m_Center: {x: 3.6376284e-14, y: 3.9737115, z: -4.4347477}
+  m_Center: {x: 4.203113e-16, y: 3.9737115, z: -0.46241003}
 --- !u!143 &2889249350331709834
 CharacterController:
   m_ObjectHideFlags: 0
@@ -493,8 +489,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraFollow: {fileID: 963194227}
-  forwardSpeed: 15
-  jumpForce: 10
+  forwardSpeed: 10
+  jumpForce: 11
   gravity: -20
 --- !u!4 &6758088223695140648
 Transform:

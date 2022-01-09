@@ -53,10 +53,13 @@
     <UnityVersion>2020.3.19f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\PlayerMovement.cs" />
-    <Compile Include="Assets\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\TileManager.cs" />
     <Compile Include="Assets\Scripts\SwipeManager.cs" />
+    <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\CameraFollow.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Demo\Scene\Standard Assets\Skyboxes\_skybox info.txt" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

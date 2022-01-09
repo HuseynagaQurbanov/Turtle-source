@@ -39,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
         controller.Move(direction * Time.fixedDeltaTime);
     }
 
+    #region Custom Methods
     void Movement()
     {
         #region Position
@@ -95,4 +96,15 @@ public class PlayerMovement : MonoBehaviour
     {
         cameraFollow.transform.position = new Vector3(offset.x + transform.position.x, offset.y + transform.position.y, transform.position.z);
     }
+    #endregion
+
+    #region Unity Methods
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Obstacle")
+        {
+            Destroy(gameObject);
+        }
+    }
+    #endregion
 }
