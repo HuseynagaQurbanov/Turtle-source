@@ -39,8 +39,4 @@ public class TileManager : MonoBehaviour
         Destroy(activeTiles[0]);
         activeTiles.RemoveAt(0);
     }
-
-    
-
-
 }
