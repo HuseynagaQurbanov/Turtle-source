@@ -21,10 +21,18 @@ public class TileManager : MonoBehaviour
 
     void Update()
     {
-        if(playerTranform.position.x - 70 > zSpawn - (numberOfTiles * tileLength))
+        if (playerTranform == null)
         {
-            SpawnTile(Random.Range(0, tilePrefabs.Length));
-            DeleteTile();
+            return;
+        }
+        else
+        {
+            if (playerTranform.position.x - 70 > zSpawn - (numberOfTiles * tileLength))
+            {
+
+                SpawnTile(Random.Range(0, tilePrefabs.Length));
+                DeleteTile();
+            }
         }
     }
     void SpawnTile(int tileIndex)

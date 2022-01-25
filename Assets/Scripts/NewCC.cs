@@ -15,7 +15,7 @@ public class NewCC : MonoBehaviour
     private Vector3 offset;
     public Camera cameraFollow;
     public float gravity = -20;
-    public float fwdSpeed;
+    public static float fwdSpeed = 0.3f;
     private float x;
     private float y;
     public float jumpForce;
@@ -25,6 +25,7 @@ public class NewCC : MonoBehaviour
         offset = cameraFollow.transform.position - transform.position;
         m_char = GetComponent<CharacterController>();
         transform.position = new Vector3(transform.position.x, transform.position.y, 0);
+        fwdSpeed = 0.3f;
     }
 
     void Update()
@@ -100,6 +101,11 @@ public class NewCC : MonoBehaviour
     void CameraFollow()
     {
         cameraFollow.transform.position = new Vector3(offset.x + transform.position.x, offset.y + transform.position.y, transform.position.z);
+
+        if (gameObject == null)
+        {
+            return;
+        }
     }
 
     void Jump()
